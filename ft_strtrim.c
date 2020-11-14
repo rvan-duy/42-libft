@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*makenewstring(char *originalstr, char *newstr, int begin, int end)
+static char	*makenewstring(char *originalstr, char *newstr, int begin, int end)
 {
 	int i;
 
@@ -26,7 +26,7 @@ char	*makenewstring(char *originalstr, char *newstr, int begin, int end)
 	return (newstr);
 }
 
-int		ispartofset(char *setter, char c)
+static int	ispartofset(char *setter, char c)
 {
 	int i;
 
@@ -40,7 +40,7 @@ int		ispartofset(char *setter, char c)
 	return (0);
 }
 
-int		findstart(char *str, char *setter)
+static int	findstart(char *str, char *setter)
 {
 	int i;
 
@@ -54,7 +54,7 @@ int		findstart(char *str, char *setter)
 	return (i);
 }
 
-int		findend(char *str, char *setter)
+static int	findend(char *str, char *setter)
 {
 	int i;
 
