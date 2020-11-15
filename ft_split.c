@@ -6,14 +6,13 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:12:21 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/14 17:29:47 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/15 13:13:53 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	countwords(char *s, char c)
+static int	countwords(const char *s, char c)
 {
 	int i;
 	int count;
@@ -34,7 +33,7 @@ static int	countwords(char *s, char c)
 	return (count);
 }
 
-static int	findstart(char *s, char c, int i)
+static int	findstart(const char *s, char c, int i)
 {
 	while (s[i])
 	{
@@ -45,42 +44,32 @@ static int	findstart(char *s, char c, int i)
 	return (i);
 }
 
-static int	findlen(char *str, char c, int start)
+static int	findlen(const char *s, char c, int start)
 {
 	int i;
 
 	i = 0;
-	while (str[start] != c && str[start] != '\0')
-	{	
+	while (s[start] != c && s[start] != '\0')
+	{
 		i++;
 		start++;
 	}
 	return (i);
 }
 
-char		**ft_split(char const *s, char c)
+static char	**splitstr(const char *s, char c, int arraylen, char **finalstr)
 {
-	char	**finalstr;
-	char 	*str;
-	int		arraylen;
-	int 	start;
-	int 	len;
-	int		i;
+	int	start;
+	int	len;
+	int	i;
 
-	if (!s)
-		return (NULL);
-	arraylen = countwords((char *)s, c);
-	finalstr = ft_calloc(arraylen + 1, sizeof(char *));
-	if (!finalstr)
-		return (NULL);
-	str = (char *)s;
 	i = 0;
 	start = 0;
 	len = 0;
 	while (i < arraylen)
 	{
-		start = findstart(str, c, start + len);
-		len = findlen(str, c, start);
+		start = findstart(s, c, start + len);
+		len = findlen(s, c, start);
 		finalstr[i] = ft_substr(s, start, len);
 		if (!finalstr[i])
 		{
@@ -92,8 +81,24 @@ char		**ft_split(char const *s, char c)
 			free(finalstr);
 			return (NULL);
 		}
-		//printf("s:%d l:%d i:%d (%s)\n", start, len, i, finalstr[i]);
 		i++;
 	}
+	return (finalstr);
+}
+
+char		**ft_split(char const *s, char c)
+{
+	char	**finalstr;
+	int		arraylen;
+
+	if (!s)
+		return (NULL);
+	arraylen = countwords(s, c);
+	finalstr = ft_calloc(arraylen + 1, sizeof(char *));
+	if (!finalstr)
+		return (NULL);
+	finalstr = splitstr(s, c, arraylen, finalstr);
+	if (!finalstr)
+		return (NULL);
 	return (finalstr);
 }
