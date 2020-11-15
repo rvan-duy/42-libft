@@ -6,7 +6,7 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 15:51:14 by ruben         #+#    #+#                 */
-/*   Updated: 2020/11/14 15:31:48 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/15 12:52:34 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	intlen(int n)
 	return (len + 1);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		i;
 	char	*newstr;
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	i = intlen(n);
-	newstr = malloc(sizeof(char) * i + 1);
+	newstr = ft_calloc(sizeof(char), i + 1);
 	if (!newstr)
 		return (NULL);
 	newstr[i--] = '\0';
