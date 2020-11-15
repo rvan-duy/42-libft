@@ -6,7 +6,7 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 15:51:14 by ruben         #+#    #+#                 */
-/*   Updated: 2020/11/15 12:52:34 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/15 16:23:09 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char		*ft_itoa(int n)
 	newstr = ft_calloc(sizeof(char), i + 1);
 	if (!newstr)
 		return (NULL);
-	newstr[i--] = '\0';
+	i--;
 	if (n == 0)
 		newstr[i] = '0';
 	if (n < 0)
