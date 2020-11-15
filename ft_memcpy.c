@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 11:16:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/12 14:18:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/15 11:28:41 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,15 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t		i;
-	char		*destination;
-	const char	*source;
+	size_t	i;
 
 	i = 0;
-	destination = dst;
-	source = src;
-	if (dst == NULL && src == NULL)
+	if (!dst && !src)
 		return (NULL);
 	while (i < n)
 	{
-		destination[i] = source[i];
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
-	return (destination);
+	return (dst);
 }
