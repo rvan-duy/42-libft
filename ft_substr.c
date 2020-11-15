@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 17:14:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/15 11:45:43 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/15 11:50:28 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	strlen = ft_strlen(s);
 	if (start > strlen)
 		return (ft_strdup(""));
-	newstr = ft_calloc(len + 1, sizeof(char *));
+	newstr = ft_calloc(len + 1, sizeof(char));
 	if (!newstr)
 		return (NULL);
 	while (i < len)
