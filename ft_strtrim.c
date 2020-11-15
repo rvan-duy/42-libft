@@ -6,27 +6,27 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 10:34:32 by ruben         #+#    #+#                 */
-/*   Updated: 2020/11/12 15:46:28 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/15 12:49:33 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*makenewstring(char *originalstr, char *newstr, int begin, int end)
+static char	*makenewstring(const char *str, char *newstr, int begin, int end)
 {
 	int i;
 
 	i = 0;
 	while (i < (end - begin + 1))
 	{
-		newstr[i] = originalstr[i + begin];
+		newstr[i] = str[i + begin];
 		i++;
 	}
 	newstr[i] = '\0';
 	return (newstr);
 }
 
-static int	ispartofset(char *setter, char c)
+static int	ispartofset(const char *setter, char c)
 {
 	int i;
 
@@ -40,7 +40,7 @@ static int	ispartofset(char *setter, char c)
 	return (0);
 }
 
-static int	findstart(char *str, char *setter)
+static int	findstart(const char *str, const char *setter)
 {
 	int i;
 
@@ -54,7 +54,7 @@ static int	findstart(char *str, char *setter)
 	return (i);
 }
 
-static int	findend(char *str, char *setter)
+static int	findend(const char *str, const char *setter)
 {
 	int i;
 
@@ -68,31 +68,28 @@ static int	findend(char *str, char *setter)
 	return (i);
 }
 
-char	*ft_strtrim(const char *s1, char const *set)
+char		*ft_strtrim(const char *s1, const char *set)
 {
 	int		begin;
 	int		end;
-	char	*str1;
-	char	*setter;
 	char	*newstr;
 
-	str1 = (char *)s1;
-	setter = (char *)set;
-	if (!str1)
+	if (!s1)
 		return (NULL);
-	if (set == NULL)
-		return (ft_strdup(str1));
-	begin = findstart(str1, setter);
-	end = findend(str1, setter);
+	if (!set)
+		return (ft_strdup(s1));
+	begin = findstart(s1, set);
+	end = findend(s1, set);
 	if (begin > end)
 	{
-		newstr = malloc(sizeof(char));
-		newstr[0] = '\0';
+		newstr = ft_calloc(sizeof(char), 1);
+		if (!newstr)
+			return (NULL);
 		return (newstr);
 	}
-	newstr = malloc(sizeof(char) * (end - begin) + 2);
-	if (newstr == NULL)
+	newstr = ft_calloc(sizeof(char), (end - begin) + 2);
+	if (!newstr)
 		return (NULL);
-	makenewstring(str1, newstr, begin, end);
+	makenewstring(s1, newstr, begin, end);
 	return (newstr);
 }
