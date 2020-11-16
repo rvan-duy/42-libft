@@ -6,7 +6,7 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 20:30:28 by ruben         #+#    #+#                 */
-/*   Updated: 2020/11/12 15:31:25 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/15 21:12:04 by rubenz        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str = (char *)s;
 	if (!s)
 		return (NULL);
-	newstr = malloc(sizeof(char) * ft_strlen(str) + 1);
+	newstr = ft_calloc(ft_strlen(str) + 1, sizeof(char));
 	if (!newstr)
 		return (NULL);
 	while (str[i] != '\0')
@@ -30,6 +30,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		newstr[i] = f(i, str[i]);
 		i++;
 	}
-	newstr[i] = '\0';
 	return (newstr);
 }
