@@ -15,26 +15,17 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*newstr;
-	int		i;
-	int		j;
+	int		len1;
+	int		len2;
 
-	i = 0;
-	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	newstr = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	newstr = ft_calloc(len1 + len2 + 1, sizeof(char));
 	if (!newstr)
 		return (NULL);
-	while (s1[i] != '\0')
-	{
-		newstr[i] = s1[i];
-		i++;
-	}
-	while (s2[j] != '\0')
-	{
-		newstr[i] = s2[j];
-		i++;
-		j++;
-	}
+	ft_strlcpy(newstr, s1, len1 + 1);
+	ft_strlcat(newstr, s2, len1 + len2 + 1);
 	return (newstr);
 }
