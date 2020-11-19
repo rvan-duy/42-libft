@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/18 13:18:19 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/18 13:18:39 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/19 12:43:14 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list *list;
 
-	list = malloc(sizeof(t_list));
+	list = ft_calloc(1 , sizeof(t_list));
 	if (!list)
-		return (0);
+		return (NULL);
 	list->content = content;
-	list->next = NULL;
 	return (list);
 }
