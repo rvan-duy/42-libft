@@ -6,11 +6,9 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 15:57:28 by ruben         #+#    #+#                 */
-/*   Updated: 2020/11/12 15:14:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/19 22:09:37 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_atoi(char *nptr)
 {
