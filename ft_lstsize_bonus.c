@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/19 12:37:01 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/19 12:37:11 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/19 12:44:21 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_lstsize(t_list *lst)
 
 	i = 0;
 	if (!lst)
-		return (NULL);
+		return (0);
 	while (lst)
 	{
 		lst = lst->next;
