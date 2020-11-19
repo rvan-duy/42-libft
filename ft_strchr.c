@@ -6,24 +6,20 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 12:04:12 by ruben         #+#    #+#                 */
-/*   Updated: 2020/11/07 14:19:27 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/19 21:53:26 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	int		i;
-	char	*str;
 
 	i = 0;
-	str = (char *)s;
-	while (str[i] != c)
+	while (((unsigned char *)s)[i] != c)
 	{
-		if (str[i] == '\0')
-			return (NULL);
+		if (((unsigned char *)s)[i] == '\0')
+			return (0);
 		i++;
 	}
-	return (&str[i]);
+	return (&((unsigned char *)s)[i]);
 }
