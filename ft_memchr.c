@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 17:37:59 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/07 17:41:00 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/19 21:41:55 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (((unsigned char *)s)[i] == (unsigned char)c)
-		{
 			return (&((unsigned char *)s)[i]);
-		}
 		i++;
 	}
 	return (NULL);
