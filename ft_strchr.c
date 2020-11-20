@@ -6,20 +6,22 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 12:04:12 by ruben         #+#    #+#                 */
-/*   Updated: 2020/11/19 21:53:26 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/20 11:41:00 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
 	int		i;
+	char	*str;
 
 	i = 0;
-	while (((unsigned char *)s)[i] != c)
+	str = (char *)s;
+	while (str[i] != c)
 	{
-		if (((unsigned char *)s)[i] == '\0')
+		if (str[i] == '\0')
 			return (0);
 		i++;
 	}
-	return (&((unsigned char *)s)[i]);
+	return (&str[i]);
 }
