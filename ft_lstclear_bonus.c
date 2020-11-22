@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 12:24:59 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/22 18:17:20 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/22 19:24:09 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list *tmp;
 	t_list *tmp2;
 
-	if (!lst || !del)
+	if (!lst)
 		return ;
 	tmp = *lst;
 	while (tmp)
@@ -27,4 +27,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		ft_lstdelone(tmp, *del);
 		tmp = tmp2;
 	}
+	*lst = NULL;
 }
