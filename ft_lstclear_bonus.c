@@ -6,12 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 12:24:59 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/22 19:24:09 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/22 19:30:23 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
