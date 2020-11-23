@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:12:21 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/15 13:13:53 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/23 14:05:54 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static char	**splitstr(const char *s, char c, int arraylen, char **finalstr)
 		finalstr[i] = ft_substr(s, start, len);
 		if (!finalstr[i])
 		{
-			while (i >= 0)
+			while (i > 0)
 			{
 				i--;
 				free(finalstr[i]);
