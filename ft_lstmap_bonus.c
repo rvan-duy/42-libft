@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 19:39:55 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/23 12:07:21 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2020/11/23 12:11:09 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		}
 		lst = lst->next;
 	}
-	*lst = NULL;
+	lst = NULL;
 	return (newlist);
 }
