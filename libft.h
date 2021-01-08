@@ -6,7 +6,11 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 17:44:08 by rvan-duy      #+#    #+#                 */
+<<<<<<< HEAD
 /*   Updated: 2021/01/08 19:33:59 by rvan-duy      ########   odam.nl         */
+=======
+/*   Updated: 2020/12/01 14:38:15 by rvan-duy      ########   odam.nl         */
+>>>>>>> 8b618c0adbe49824cba253a00ca8535a9c143bef
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +77,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 */
 
 char				*ft_strndup(const char *s, size_t n);
+void				*ft_realloc(void *ptr, size_t count, size_t size);
 
 #endif
