@@ -6,7 +6,7 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 21:51:37 by ruben         #+#    #+#                 */
-/*   Updated: 2021/01/27 15:41:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/27 15:52:01 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int		ft_putstr_fd(char *s, int fd)
 {
-	int i;
-
-	i = 0;
 	if (!s)
 		return (0);
 	return (write(fd, s, ft_strlen(s)));
