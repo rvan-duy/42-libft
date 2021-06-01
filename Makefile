@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/27 19:13:56 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/04 15:10:39 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/06/01 15:25:40 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,14 @@ SRC =   ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 				ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 				ft_putnbr_fd.c ft_realloc.c ft_strndup.c ft_utoa.c ft_atod.c \
-				get_next_line.c get_next_line_utils.c
+				get_next_line.c get_next_line_utils.c ft_free.c
 
 BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 				ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 				ft_lstiter_bonus.c ft_lstclear_bonus.c ft_lstmap_bonus.c
+
+NOCOLOR = \033[0m
+COLOR = \033[33m
 
 OBJ =   $(SRC:.c=.o)
 
@@ -37,24 +40,26 @@ INCLUDES = libft.h
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
-		ar rcs $(NAME) $?
+	@echo "$(COLOR)Building libarary. ($(NAME))$(NOCOLOR)" 
+	@ar rcs $(NAME) $?
 
 %.o: %.c
-		gcc -Wall -Wextra -Werror -c $<
+	@gcc -Wall -Wextra -Werror -c $<
 
 bonus: $(NAME) $(BONUS_OBJ) $(INCLUDES)
-		@touch bonus
-		ar rcs $(NAME) $?
+	@touch bonus
+	ar rcs $(NAME) $?
 
 norm:
-		norminette $(SRC) $(BONUS) $(INCLUDES)
+	norminette $(SRC) $(BONUS) $(INCLUDES)
 
 clean:
-		/bin/rm -f $(OBJ) $(BONUS_OBJ)
-		/bin/rm -f *~
+	@/bin/rm -f $(OBJ) $(BONUS_OBJ)
+	@echo "$(COLOR)Removing object files.$(NOCOLOR)"
 
 fclean: clean
-		/bin/rm -f $(NAME)
-		/bin/rm -f bonus
+	@/bin/rm -f $(NAME)
+	@/bin/rm -f bonus
+	@echo "$(COLOR)Removing $(NAME)$(NOCOLOR)"
 
 re: fclean all
