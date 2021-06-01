@@ -6,14 +6,14 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/01 15:15:46 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/06/01 16:04:31 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/06/01 17:30:40 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_free(void *ptr)
+void	ft_free(void **ptr)
 {
-	free(ptr);
-	return (NULL);
+	free(*ptr);
+	*ptr = NULL;
 }
