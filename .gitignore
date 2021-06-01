@@ -1,0 +1,3 @@
+.gitignore
+libft.a
+*.o

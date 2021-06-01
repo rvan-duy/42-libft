@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/27 19:13:56 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/06/01 15:25:40 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/06/01 15:29:43 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,8 @@ INCLUDES = libft.h
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
-	@echo "$(COLOR)Building libarary. ($(NAME))$(NOCOLOR)" 
 	@ar rcs $(NAME) $?
+	@echo "$(COLOR)$(NAME) has been created.$(NOCOLOR)"
 
 %.o: %.c
 	@gcc -Wall -Wextra -Werror -c $<
