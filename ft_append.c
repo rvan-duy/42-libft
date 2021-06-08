@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/08 19:01:40 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/06/08 19:26:53 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/06/08 19:30:19 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*ft_append(const char *dst, const char *src)
 		return (NULL);
 	ft_memcpy(newstr, dst, len1);
 	ft_memcpy(newstr + len1, src, len2);
+	free(dst);
 	return (newstr);
 }
