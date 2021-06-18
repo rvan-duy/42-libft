@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 17:44:08 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/06/12 16:32:45 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/06/18 15:56:38 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ double	ft_atod(char *str);
 void	ft_free(void *ptr);
 char	*ft_append(char *dst, const char *src);
 void	ft_error_and_exit(int ret, char *msg);
+void	ft_close_fd(int fd);
+size_t	ft_array_len(void **array);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 128
