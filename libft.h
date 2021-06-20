@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 17:44:08 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/06/18 15:56:38 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/06/20 13:36:34 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_putchar_fd(char c, int fd);
-int		ft_putstr_fd(char *s, int fd);
+int		ft_putstr_fd(const char *s, int fd);
 int		ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_list	*ft_lstnew(void *content);

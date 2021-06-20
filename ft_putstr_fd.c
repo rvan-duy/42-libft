@@ -6,14 +6,14 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 21:51:37 by ruben         #+#    #+#                 */
-/*   Updated: 2021/02/12 14:15:22 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/06/20 13:35:38 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-int	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(const char *s, int fd)
 {
 	if (!s)
 		return (0);
