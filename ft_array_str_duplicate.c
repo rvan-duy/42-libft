@@ -6,35 +6,30 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/20 15:08:08 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/06/20 15:21:11 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/06/20 16:07:18 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_array_str_duplicate(char **array, size_t array_len)
+void	ft_array_strdup(char **dst, char **src, size_t n)
 {
-	char	**new_array;
 	size_t	i;
 
-	new_array = ft_calloc(array_len, sizeof(char *));
-	if (new_array == NULL)
-		return (NULL);
 	i = 0;
-	while (i < array_len)
+	while (i < n)
 	{
-		new_array[i] = ft_strdup(array[i]);
-		if (new_array == NULL)
+		dst[i] = ft_strdup(src[i]);
+		if (dst[i] == NULL)
 		{
 			while (i > 0)
 			{
 				i--;
-				ft_free(&new_array[i]);
+				ft_free(&dst[i]);
 			}
-			ft_free(&new_array);
-			return (NULL);
+			dst = NULL;
+			return ;
 		}
 		i++;
 	}
-	return (new_array);
 }
