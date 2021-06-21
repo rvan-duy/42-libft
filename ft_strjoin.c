@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 17:55:40 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/06/21 23:27:26 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/06/21 23:33:31 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strjoin_three(const char *s1, const char *s2, const char *s3)
 	size_t	len1;
 	size_t	len2;
 	size_t	len3;
-	
+
 	if (!s1 || !s2 || !s3)
 		return (NULL);
 	len1 = ft_strlen(s1);
