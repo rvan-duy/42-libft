@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 17:44:08 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/06/20 16:06:52 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/06/21 23:31:18 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ int		ft_tolower(int c);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtrim(const char *s1, char const *set);
+char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strtrim(const char *s1, const char *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -79,6 +79,7 @@ void	ft_close_fd(int fd);
 size_t	ft_array_len(void **array);
 void	ft_array_free(void **array, size_t len);
 void	ft_array_strdup(char **dst, char **src, size_t n);
+char	*ft_strjoin_three(const char *s1, const char *s2, const char *s3);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 128
