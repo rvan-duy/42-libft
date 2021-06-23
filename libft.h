@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 17:44:08 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/06/21 23:31:18 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/06/23 16:28:05 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_putchar_fd(char c, int fd);
 int		ft_putstr_fd(const char *s, int fd);
-int		ft_putendl_fd(char *s, int fd);
+int		ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -74,11 +74,8 @@ char	*ft_utoa(unsigned int n);
 double	ft_atod(char *str);
 void	ft_free(void *ptr);
 char	*ft_append(char *dst, const char *src);
-void	ft_error_and_exit(int ret, char *msg);
-void	ft_close_fd(int fd);
 size_t	ft_array_len(void **array);
 void	ft_array_free(void **array, size_t len);
-void	ft_array_strdup(char **dst, char **src, size_t n);
 char	*ft_strjoin_three(const char *s1, const char *s2, const char *s3);
 
 # ifndef BUFFER_SIZE
