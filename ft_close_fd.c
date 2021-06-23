@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/18 13:01:33 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/06/21 23:34:42 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/06/23 09:14:32 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <errno.h>
 #include <string.h>
 
-void ft_close_fd(int fd)
+void	ft_close_fd(int fd)
 {
 	if (close(fd) < 0)
 	{
