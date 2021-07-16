@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 17:44:08 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/06/23 16:28:05 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/07/16 17:10:53 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*ft_strndup(const char *s, size_t n);
 void	*ft_realloc(void *ptr, size_t count, size_t size);
 char	*ft_utoa(unsigned int n);
 double	ft_atod(char *str);
-void	ft_free(void *ptr);
+void	ft_free(void **ptr);
 char	*ft_append(char *dst, const char *src);
 size_t	ft_array_len(void **array);
 void	ft_array_free(void **array, size_t len);
